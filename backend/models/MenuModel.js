@@ -3,7 +3,7 @@ import db from "../config/Database.js";
 
 const { DataTypes } = Sequelize;
 
-const Menu = db.define(
+const Menus = db.define(
   "menu",
   {
     name: DataTypes.STRING,
@@ -17,7 +17,7 @@ const Menu = db.define(
   }
 );
 
-export default Menu;
+export default Menus;
 
 (async () => {
   await db.sync();
