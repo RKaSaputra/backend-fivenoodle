@@ -1,6 +1,6 @@
 node_modules
-.UserController.js
-.UserModel.js
-.UserRoute.js
+controllers/UserController.js
+models/UserModel.js
+routes/UserRoute.js
 
 request.rest
