@@ -1,1 +1,6 @@
 node_modules
+/controllers/UserController.js
+/models/UserModel.js
+/routes/UserRoute.js
+
+request.rest
