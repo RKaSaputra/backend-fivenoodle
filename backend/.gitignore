@@ -1,6 +1,11 @@
 node_modules
-controllers/UserController
-models/UserModel
-routes/UserRoute
+
+
+/controllers/UserController.js
+/models/UserModel.js
+/routes/UserRoute.js
+/tesignore/UserModel.js
+
 
 request.rest
+package-lock.json
