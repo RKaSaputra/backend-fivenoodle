@@ -1,6 +1,6 @@
 node_modules
-.controllers/UserController
-.models/UserModel
-.routes/UserRoute
+controllers/UserController
+models/UserModel
+routes/UserRoute
 
 request.rest
