@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+<<<<<<< HEAD
 import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
 import dotenv from "dotenv";
@@ -40,5 +41,15 @@ app.use(UserRoute);
 app.use(AuthRoute);
 
 // store.sync();
+=======
+import MenuRoute from "./routes/MenuRoute.js";
+import MenuCategoryRoute from "./routes/MenuCategoryRoute.js";
 
-app.listen(process.env.APP_PORT, () => console.log("Server up and Running"));
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(MenuRoute);
+app.use(MenuCategoryRoute);
+>>>>>>> prabu
+
+app.listen(5000, () => console.log("Server up and Running"));
