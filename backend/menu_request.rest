@@ -11,7 +11,8 @@ Content-Type: application/json
   "calories": 900,
   "rating": 4.8,
   "nutriScore": 79,
-  "img": "image-green-noodle"
+  "img": "image-green-noodle",
+  "ID_menu_Category": 1
 }
 
 ###

@@ -11,14 +11,10 @@ const Menus = db.define(
     rating: DataTypes.FLOAT,
     nutriScore: DataTypes.INTEGER,
     img: DataTypes.STRING,
+    ID_menu_Category: DataTypes.INTEGER,
   },
   {
     freezeTableName: true,
   }
 );
-
 export default Menus;
-
-// (async () => {
-//   await db.sync();
-// })();
