@@ -46,5 +46,5 @@ app.use(AuthRoute);
 app.use(MenuRoute);
 app.use(MenuCategoryRoute);
 
-app.listen(5000, () => console.log("Server up and Running"));
+app.listen(process.env.APP_PORT, () => console.log("Server up and Running"));
 // store.sync();
