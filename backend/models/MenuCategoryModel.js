@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const { DataTypes } = Sequelize;
 
 const MenuCategory = db.define(
-  "category",
+  "category_menu",
   {
     name: DataTypes.STRING,
   },
@@ -15,6 +15,6 @@ const MenuCategory = db.define(
 
 export default MenuCategory;
 
-(async () => {
-  await db.sync();
-})();
+// (async () => {
+//   await db.sync();
+// })();

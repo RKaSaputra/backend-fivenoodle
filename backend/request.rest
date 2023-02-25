@@ -1,54 +1,100 @@
-# Menu
+# # Menu
 
-GET http://localhost:5000/menu
+# GET http://localhost:5000/menu
+
+# ###
+# POST http://localhost:5000/menu
+# Content-Type: application/json
+
+# {
+#   "name" : "Green noodle",
+#   "calories": 900,
+#   "rating": 4.8,
+#   "nutriScore": 79,
+#   "img": "image-green-noodle.jpg"
+# }
+
+# ###
+# PATCH http://localhost:5000/menu/1
+# Content-Type: application/json
+
+# {
+#   "name" : "Vegetable stuff",
+#   "calories": 600,
+#   "rating": 4.7,
+#   "nutriScore": 75,
+#   "img": "vegetable-stuff"
+# }
+
+# ###
+# DELETE http://localhost:5000/menu/2
+
+
+# # Category Menu
+# ###
+# GET http://localhost:5000/category
+
+# ###
+# POST http://localhost:5000/category
+# Content-Type: application/json
+
+# {
+#   "name" : "Noodle"
+# }
+
+# ###
+# PATCH http://localhost:5000/category/1
+# Content-Type: application/json
+
+# {
+#   "name" : "Noodles"
+# }
+
+# ###
+# DELETE http://localhost:5000/category/1
+
+GET http://localhost:5000/users
 
 ###
-POST http://localhost:5000/menu
+GET http://localhost:5000/users/235aa0dd-1160-4d8c-a7ff-4bd69a5a4328
+
+
+###
+POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-  "name" : "Green noodle",
-  "calories": 900,
-  "rating": 4.8,
-  "nutriScore": 79,
-  "img": "image-green-noodle"
-}
+ "username": "dikasaputra",
+ "password": "admin",
+ "confPassword": "admin"
+}  
+
 
 ###
-PATCH http://localhost:5000/menu/1
+PATCH  http://localhost:5000/users/fb4997a2-ec7a-42e2-a49b-0a2d05420b14
 Content-Type: application/json
 
 {
-  "name" : "Vegetable stuff",
-  "calories": 600,
-  "rating": 4.7,
-  "nutriScore": 75,
-  "img": "vegetable-stuff"
-}
+ "username": "dikasaputra",
+ "password": "",
+ "confPassword": ""
+}  
+
 
 ###
-DELETE http://localhost:5000/menu/2
-
-
-# Category Menu
-###
-GET http://localhost:5000/category
+DELETE http://localhost:5000/users/fb4997a2-ec7a-42e2-a49b-0a2d05420b14
 
 ###
-POST http://localhost:5000/category
+POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-  "name" : "Noodle"
-}
+ "username": "admin",
+ "password": "admin"
+}  
 
 ###
-PATCH http://localhost:5000/category/1
-Content-Type: application/json
-
-{
-  "name" : "Noodles"
-}
+GET http://localhost:5000/me
 
 ###
-DELETE http://localhost:5000/category/1
+DELETE http://localhost:5000/logout

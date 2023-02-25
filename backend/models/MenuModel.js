@@ -19,6 +19,6 @@ const Menus = db.define(
 
 export default Menus;
 
-(async () => {
-  await db.sync();
-})();
+// (async () => {
+//   await db.sync();
+// })();
