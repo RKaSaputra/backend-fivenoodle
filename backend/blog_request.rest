@@ -13,7 +13,7 @@ POST http://localhost:5000/blog-category
 Content-Type: application/json
 
 {
-  "Nama": "Makanan Ringan"
+  "Nama": "aa"
 }
 
 ###
