@@ -5,7 +5,12 @@ import FileUpload from "express-fileupload";
 import BlogRoute from "./routes/BlogRoute.js";
 import BlogCategoryRoute from "./routes/BlogCategoryRoute.js";
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+  })
+);
 app.use(express.json());
 app.use(FileUpload());
 app.use(express.static("public"));
