@@ -15,6 +15,7 @@
 
 import express from "express";
 import cors from "cors";
+<<<<<<< HEAD
 import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
 import dotenv from "dotenv";
@@ -23,6 +24,12 @@ import UserRoute from "./routes/UserRoute.js";
 import AuthRoute from "./routes/AuthRoute.js";
 dotenv.config();
 
+=======
+import FileUpload from "express-fileupload";
+// import UserRoute from "./routes/UserRoute.js";
+import BlogRoute from "./routes/BlogRoute.js";
+import BlogCategoryRoute from "./routes/BlogCategoryRoute.js";
+>>>>>>> Alphard
 const app = express();
 
 const sessionStore = SequelizeStore(session.Store);
@@ -51,9 +58,17 @@ app.use(
   })
 );
 app.use(express.json());
+<<<<<<< HEAD
 app.use(UserRoute);
 app.use(AuthRoute);
 
 // store.sync();
+=======
+app.use(FileUpload());
+app.use(express.static("public"));
+// app.use(UserRoute);
+app.use(BlogCategoryRoute);
+app.use(BlogRoute);
+>>>>>>> Alphard
 
 app.listen(process.env.APP_PORT, () => console.log("Server up and Running"));

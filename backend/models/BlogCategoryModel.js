@@ -3,6 +3,7 @@ import db from "../config/Database.js";
 
 const { DataTypes } = Sequelize;
 
+<<<<<<< HEAD:backend/models/UserModel.js
 const Users = db.define(
   "users",
   {
@@ -29,10 +30,24 @@ const Users = db.define(
         notEmpty: true,
       },
     },
+=======
+const BlogCategory = db.define(
+  "blog_categories",
+  {
+    Nama: DataTypes.STRING,
+>>>>>>> Alphard:backend/models/BlogCategoryModel.js
   },
   {
     freezeTableName: true,
   }
 );
 
+<<<<<<< HEAD:backend/models/UserModel.js
 export default Users;
+=======
+export default BlogCategory;
+
+// (async () => {
+//   await db.sync();
+// })();
+>>>>>>> Alphard:backend/models/BlogCategoryModel.js
