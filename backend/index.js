@@ -8,6 +8,8 @@ import UserRoute from "./routes/UserRoute.js";
 import AuthRoute from "./routes/AuthRoute.js";
 import MenuRoute from "./routes/MenuRoute.js";
 import MenuCategoryRoute from "./routes/MenuCategoryRoute.js";
+import BlogRoute from "./routes/BlogRoute.js";
+import BlogCategoryRoute from 
 
 dotenv.config();
 const app = express();
@@ -45,6 +47,8 @@ app.use(UserRoute);
 app.use(AuthRoute);
 app.use(MenuRoute);
 app.use(MenuCategoryRoute);
+app.use(BlogCategoryRoute);
+app.use(BlogRoute);
 
 app.listen(5000, () => console.log("Server up and Running"));
 // store.sync();
