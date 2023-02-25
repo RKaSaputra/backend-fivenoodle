@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+<<<<<<< HEAD
 import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
 import dotenv from "dotenv";
@@ -34,6 +35,11 @@ app.use(
     },
   })
 );
+=======
+import BlogRoute from "./routes/BlogRoute.js";
+import BlogCategoryRoute from "./routes/BlogCategoryRoute.js";
+const app = express();
+>>>>>>> Alphard
 app.use(
   cors({
     credentials: true,
@@ -42,11 +48,14 @@ app.use(
 );
 
 app.use(express.json());
+<<<<<<< HEAD
 app.use(cors());
 app.use(UserRoute);
 app.use(AuthRoute);
 app.use(MenuRoute);
 app.use(MenuCategoryRoute);
+=======
+>>>>>>> Alphard
 app.use(BlogCategoryRoute);
 app.use(BlogRoute);
 
