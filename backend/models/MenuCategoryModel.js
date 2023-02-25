@@ -15,6 +15,6 @@ const MenuCategory = db.define(
 
 export default MenuCategory;
 
-(async () => {
-  await db.sync();
-})();
+// (async () => {
+//   await db.sync();
+// })();
