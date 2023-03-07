@@ -4,6 +4,7 @@ import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
 import dotenv from "dotenv";
 import db from "./config/Database.js";
+
 import UserRoute from "./routes/UserRoute.js";
 import AuthRoute from "./routes/AuthRoute.js";
 import MenuRoute from "./routes/MenuRoute.js";
@@ -42,7 +43,6 @@ app.use(
 );
 
 app.use(express.json());
-app.use(cors());
 app.use(UserRoute);
 app.use(AuthRoute);
 app.use(MenuRoute);

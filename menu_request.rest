@@ -1,55 +1,55 @@
-# Menu
+# # Menu
 
-GET http://localhost:5000/menu
+# GET http://localhost:5000/menu
 
-###
-POST http://localhost:5000/menu
-Content-Type: application/json
+# ###
+# POST http://localhost:5000/menu
+# Content-Type: application/json
 
-{
-  "name" : "Green noodle",
-  "calories": 900,
-  "rating": 4.8,
-  "nutriScore": 79,
-  "img": "image-green-noodle",
-  "ID_menu_Category": 1
-}
+# {
+#   "name" : "Green noodle",
+#   "calories": 900,
+#   "rating": 4.8,
+#   "nutriScore": 79,
+#   "img": "image-green-noodle",
+#   "ID_menu_Category": 1
+# }
 
-###
-PATCH http://localhost:5000/menu/1
-Content-Type: application/json
+# ###
+# PATCH http://localhost:5000/menu/1
+# Content-Type: application/json
 
-{
-  "name" : "Vegetable stuff",
-  "calories": 600,
-  "rating": 4.7,
-  "nutriScore": 75,
-  "img": "vegetable-stuff"
-}
+# {
+#   "name" : "Vegetable stuff",
+#   "calories": 600,
+#   "rating": 4.7,
+#   "nutriScore": 75,
+#   "img": "vegetable-stuff"
+# }
 
-###
-DELETE http://localhost:5000/menu/2
+# ###
+# DELETE http://localhost:5000/menu/2
 
 
-# Category Menu
-###
-GET http://localhost:5000/category
+# # Category Menu
+# ###
+# GET http://localhost:5000/category
 
-###
-POST http://localhost:5000/category
-Content-Type: application/json
+# ###
+# POST http://localhost:5000/category
+# Content-Type: application/json
 
-{
-  "name" : "Noodle"
-}
+# {
+#   "name" : "Noodle"
+# }
 
-###
-PATCH http://localhost:5000/category/1
-Content-Type: application/json
+# ###
+# PATCH http://localhost:5000/category/1
+# Content-Type: application/json
 
-{
-  "name" : "Noodles"
-}
+# {
+#   "name" : "Noodles"
+# }
 
-###
-DELETE http://localhost:5000/category/1
+# ###
+# DELETE http://localhost:5000/category/1
