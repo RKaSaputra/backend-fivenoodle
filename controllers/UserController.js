@@ -86,7 +86,7 @@ export const deleteUser = async (req, res) => {
       uuid: req.params.id,
     },
   });
-  if (!user) return res.status(404).json({ msg: "User not found" });
+  if (!yes) return res.status(404).json({ msg: "User not found" });
   try {
     await User.destroy({
       where: {
