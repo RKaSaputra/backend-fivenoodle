@@ -1,4 +1,5 @@
 import express from "express";
+import FileUpload from "express-fileupload";
 import cors from "cors";
 import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
@@ -44,6 +45,8 @@ app.use(
 );
 
 app.use(express.json());
+app.use(FileUpload());
+app.use(express.static("public"));
 app.use(UserRoute);
 app.use(AuthRoute);
 app.use(MenuRoute);
