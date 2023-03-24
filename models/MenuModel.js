@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import MenuCategory from "./MenuCategoryModel.js";
 
 const { DataTypes } = Sequelize;
 
@@ -11,10 +12,19 @@ const Menus = db.define(
     rating: DataTypes.FLOAT,
     nutriScore: DataTypes.INTEGER,
     img: DataTypes.STRING,
-    ID_menu_Category: DataTypes.INTEGER,
+    url: DataTypes.STRING,
+    menuCategoryId: DataTypes.INTEGER,
   },
   {
     freezeTableName: true,
   }
 );
+
+MenuCategory.hasMany(Menus);
+Menus.belongsTo(MenuCategory, { foreignKey: "menuCategoryId" });
+
 export default Menus;
+
+// (async () => {
+//   await db.sync();
+// })();

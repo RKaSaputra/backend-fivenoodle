@@ -12,7 +12,7 @@
 #   "rating": 4.8,
 #   "nutriScore": 79,
 #   "img": "image-green-noodle",
-#   "ID_menu_Category": 1
+#   "menuCategoryId": 1
 # }
 
 # ###

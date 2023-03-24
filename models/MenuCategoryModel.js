@@ -12,5 +12,8 @@ const MenuCategory = db.define(
     freezeTableName: true,
   }
 );
+// (async () => {
+//   await db.sync();
+// })();
 
 export default MenuCategory;
