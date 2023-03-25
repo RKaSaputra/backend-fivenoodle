@@ -37,12 +37,6 @@ export const getBlogById = async (req, res) => {
   }
 };
 export const createBlog = async (req, res) => {
-  // try {
-  //   await Blog.create(req.body);
-  //   res.status(201).json({ msg: "Blog Created" });
-  // } catch (err) {
-  //   res.status(400).json({ msg: err.message });
-  // }
   const blogCategory = await BlogCategory.findOne({
     where: {
       id: parseInt(req.body.Kategori),
@@ -50,6 +44,7 @@ export const createBlog = async (req, res) => {
   });
   if (!blogCategory)
     return res.status(404).json({ msg: "Data tidak ditemukan" });
+
   if (req.files === null)
     return res.status(400).json({ msg: "No File Uploaded" });
   const Nama = req.body.Nama;
@@ -59,10 +54,10 @@ export const createBlog = async (req, res) => {
   const ext = path.extname(file.name);
   const fileName = file.md5 + ext;
   const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
-  const allowedType = [".png", ".jpg", ".jpeg", ".jfif"];
+  // const allowedType = [".png", ".jpg", ".jpeg", ".jfif"];
 
-  if (!allowedType.includes(ext.toLowerCase()))
-    return res.status(422).json({ msg: "Invalid Images" });
+  // if (!allowedType.includes(ext.toLowerCase()))
+  //   return res.status(422).json({ msg: "Invalid Images" });
   if (fileSize > 5000000)
     return res.status(422).json({ msg: "Image must be less than 5MB" });
 

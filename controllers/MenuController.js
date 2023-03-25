@@ -64,7 +64,7 @@ export const createMenus = async (req, res) => {
   const ext = path.extname(file.name);
   const fileName = file.md5 + ext;
   const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
-  const allowedType = [".png", ".jpg", ".jpeg", ".jfif"];
+  const allowedType = [".png", ".jpg", ".jpeg", ".jfif", "webp"];
 
   if (!allowedType.includes(ext.toLowerCase()))
     return res.status(422).json({ msg: "Invalid Images" });
