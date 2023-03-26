@@ -91,16 +91,6 @@ export const createMenus = async (req, res) => {
 };
 
 export const updateMenus = async (req, res) => {
-  // try {
-  //   await Menus.update(req.body, {
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   });
-  //   res.status(200).json({ msg: "Menu Updated" });
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
   const menus = await Menus.findOne({
     where: {
       id: req.params.id,
@@ -167,16 +157,6 @@ export const updateMenus = async (req, res) => {
 };
 
 export const deleteMenus = async (req, res) => {
-  // try {
-  //   await Menus.destroy({
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   });
-  //   res.status(200).json({ msg: "Menu Deleted" });
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
   const menus = await Menus.findOne({
     where: {
       id: req.params.id,
@@ -194,6 +174,6 @@ export const deleteMenus = async (req, res) => {
     });
     res.status(200).json({ msg: "Menus Deleted" });
   } catch (error) {
-    res.status(400).json({ msg: err.message });
+    res.status(400).json({ msg: error.message });
   }
 };
