@@ -16,7 +16,6 @@ export const getMenus = async (req, res) => {
     res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
-    // console.log(error.message);
   }
 };
 
@@ -40,12 +39,6 @@ export const getMenusById = async (req, res) => {
 };
 
 export const createMenus = async (req, res) => {
-  // try {
-  //   await Menus.create(req.body);
-  //   res.status(201).json({ msg: "Menu Created" });
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
   const menuCategory = await MenuCategory.findOne({
     where: {
       id: parseInt(req.body.Kategori),
@@ -63,7 +56,7 @@ export const createMenus = async (req, res) => {
   const fileSize = file.data.length;
   const ext = path.extname(file.name);
   const fileName = file.md5 + ext;
-  const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
+  const url = `${req.protocol}://${req.get("host")}/images/menu/${fileName}`;
   const allowedType = [".png", ".jpg", ".jpeg", ".jfif", "webp"];
 
   if (!allowedType.includes(ext.toLowerCase()))
@@ -71,7 +64,7 @@ export const createMenus = async (req, res) => {
   if (fileSize > 5000000)
     return res.status(422).json({ msg: "Image must be less than 5MB" });
 
-  file.mv(`./public/images/${fileName}`, async (err) => {
+  file.mv(`./public/images/menu/${fileName}`, async (err) => {
     if (err) return res.status(500).json({ msg: err.message });
     try {
       await Menus.create({
@@ -113,10 +106,10 @@ export const updateMenus = async (req, res) => {
     if (fileSize > 5000000)
       return res.status(422).json({ msg: "Image must be less than 5MB" });
 
-    const filepath = `./public/images/${menus.img}`;
+    const filepath = `./public/images/menu/${menus.img}`;
     fs.unlinkSync(filepath);
 
-    file.mv(`./public/images/${fileName}`, (err) => {
+    file.mv(`./public/images/menu/${fileName}`, (err) => {
       if (err) return res.status(500).json({ msg: err.message });
     });
   }
@@ -124,7 +117,7 @@ export const updateMenus = async (req, res) => {
   const calories = req.body.calories;
   const rating = req.body.rating;
   const nutriScore = req.body.nutriScore;
-  const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
+  const url = `${req.protocol}://${req.get("host")}/images/menu/${fileName}`;
   const menuCategory = await MenuCategory.findOne({
     where: {
       id: parseInt(req.body.Kategori),
@@ -165,7 +158,7 @@ export const deleteMenus = async (req, res) => {
   if (!menus) return res.status(404).json({ msg: "Data tidak ditemukan" });
 
   try {
-    const filepath = `./public/images/${menus.img}`;
+    const filepath = `./public/images/menu/${menus.img}`;
     fs.unlinkSync(filepath);
     await Menus.destroy({
       where: {

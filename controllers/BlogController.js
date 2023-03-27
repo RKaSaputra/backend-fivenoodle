@@ -53,7 +53,7 @@ export const createBlog = async (req, res) => {
   const fileSize = file.data.length;
   const ext = path.extname(file.name);
   const fileName = file.md5 + ext;
-  const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
+  const url = `${req.protocol}://${req.get("host")}/images/blog/${fileName}`;
   // const allowedType = [".png", ".jpg", ".jpeg", ".jfif"];
 
   // if (!allowedType.includes(ext.toLowerCase()))
@@ -61,7 +61,7 @@ export const createBlog = async (req, res) => {
   if (fileSize > 5000000)
     return res.status(422).json({ msg: "Image must be less than 5MB" });
 
-  file.mv(`./public/images/${fileName}`, async (err) => {
+  file.mv(`./public/images/blog/${fileName}`, async (err) => {
     if (err) return res.status(500).json({ msg: err.message });
     try {
       await Blog.create({
@@ -78,16 +78,6 @@ export const createBlog = async (req, res) => {
   });
 };
 export const updateBlog = async (req, res) => {
-  // try {
-  //   await Blog.update(req.body, {
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   });
-  //   res.status(201).json({ msg: "Blog Updated" });
-  // } catch (err) {
-  //   res.status(400).json({ msg: err.message });
-  // }
   const blog = await Blog.findOne({
     where: {
       id: req.params.id,
@@ -110,16 +100,16 @@ export const updateBlog = async (req, res) => {
     if (fileSize > 5000000)
       return res.status(422).json({ msg: "Image must be less than 5MB" });
 
-    const filepath = `./public/images/${blog.img}`;
+    const filepath = `./public/images/blog/${blog.img}`;
     fs.unlinkSync(filepath);
 
-    file.mv(`./public/images/${fileName}`, (err) => {
+    file.mv(`./public/images/blog/${fileName}`, (err) => {
       if (err) return res.status(500).json({ msg: err.message });
     });
   }
   const Nama = req.body.Nama;
   const Deskripsi = req.body.Deskripsi;
-  const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
+  const url = `${req.protocol}://${req.get("host")}/images/blog/${fileName}`;
   const blogCategory = await BlogCategory.findOne({
     where: {
       id: parseInt(req.body.Kategori),
@@ -157,7 +147,7 @@ export const deleteBlog = async (req, res) => {
   if (!blog) return res.status(404).json({ msg: "Data tidak Ditemukan" });
 
   try {
-    const filepath = `./public/images/${blog.img}`;
+    const filepath = `./public/images/blog/${blog.img}`;
     fs.unlinkSync(filepath);
     await Blog.destroy({
       where: {
